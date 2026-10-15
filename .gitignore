@@ -1,0 +1,172 @@
+# ==============================================================================
+# AI Interview Simulator - Comprehensive Production .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Dependencies & Package Managers
+# ------------------------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Package manager debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# 2. Build Outputs & Compilations
+# ------------------------------------------------------------------------------
+# Next.js build and export outputs (frontend)
+.next/
+out/
+.vercel/
+.turbo/
+
+# TypeScript / Express build output (backend / root)
+dist/
+build/
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Source maps (optional / production bundles)
+*.js.map
+*.d.ts.map
+
+# ------------------------------------------------------------------------------
+# 3. Environment & Secret Configuration Files
+# ------------------------------------------------------------------------------
+# Secret environment files (contains Clerk keys, Ollama/Groq tokens, ElevenLabs secrets)
+.env
+.env*.local
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+
+# Explicitly PRESERVE template / example environment files for onboarding
+!.env.example
+!.env*.example
+!*.env.example
+
+# Private certificates, tokens, and credentials
+*.pem
+*.key
+*.cert
+*.cer
+*.crt
+*.pfx
+*.p12
+*.pub
+id_rsa
+id_ed25519
+
+# ------------------------------------------------------------------------------
+# 4. Database, Vector Store, & Local Persistence Storage
+# ------------------------------------------------------------------------------
+# Backend local JSON persistence store (runtime user data, interviews, weaknesses)
+backend/data/*.json
+# Preserve safe fixtures, samples, and directory markers
+!backend/data/.gitkeep
+!backend/data/fixtures/
+!backend/data/fixtures/**
+!backend/data/sample-*.json
+
+# ChromaDB / Vector Store local persistence
+chroma_data/
+.chroma/
+chromadb/
+backend/chroma_data/
+backend/chroma/
+
+# MongoDB / Local database directories
+mongo_data/
+mongodb_data/
+data/db/
+*.dump
+*.mongo
+
+# ------------------------------------------------------------------------------
+# 5. Testing & Code Coverage
+# ------------------------------------------------------------------------------
+coverage/
+*.lcov
+.nyc_output/
+junit.xml
+
+# ------------------------------------------------------------------------------
+# 6. Python Cache & Virtual Environments (ChromaDB / AI / ML Supporting Tools)
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+
+# ------------------------------------------------------------------------------
+# 7. Operating System & Filesystem Junk
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# ------------------------------------------------------------------------------
+# 8. IDEs, Editors & Temporary Files
+# ------------------------------------------------------------------------------
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains (WebStorm, IntelliJ IDEA, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Temporary swap & scratch files
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+scratch/
